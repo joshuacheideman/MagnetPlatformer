@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Character {
-	public SpriteRenderer spriterender; //Get MagnetGuys Sprite Renderer
+	GameObject MagnetGuy;
+	SpriteRenderer spriterender; //Get MagnetGuys Sprite Renderer
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-		spriterender = this.gameObject.GetComponentInChildren<SpriteRenderer> ();
+		MagnetGuy = GameObject.Find ("MagnetGuy");
+		spriterender = MagnetGuy.GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
