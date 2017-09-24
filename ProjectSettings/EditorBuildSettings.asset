@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Joshua/Scenes/Menu.unity
+    guid: 0dd7ee4a48b14c848a94177f681d45f4
+  - enabled: 1
+    path: Assets/Joshua/Scenes/TestScene.unity
+    guid: ce9d535d23e8e8e4c8f6d8aa16304628
