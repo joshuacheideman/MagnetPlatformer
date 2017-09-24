@@ -8,7 +8,8 @@ public abstract class Character : MonoBehaviour {
     protected float speed;
     [SerializeField]
     protected float jumpForce;
-
+	[SerializeField]
+	protected SpriteRenderer render;
     protected Rigidbody2D rb;
     protected float horDirection;
 
@@ -19,16 +20,9 @@ public abstract class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-        Move();
 	}
 
-    private void Move()
+    protected virtual void Move()
     {
-        rb.velocity = new Vector2(horDirection * speed * Time.deltaTime, rb.velocity.y);
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            rb.AddForce(Vector2.up * jumpForce);
-        }
     }
 }
