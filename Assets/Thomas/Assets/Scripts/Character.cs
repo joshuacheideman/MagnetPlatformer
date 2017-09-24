@@ -11,6 +11,8 @@ public abstract class Character : MonoBehaviour {
 	[SerializeField]
 	protected SpriteRenderer render;
     protected Rigidbody2D rb;
+	[SerializeField]
+	protected Animator anim;
     protected float horDirection;
 
     // Use this for initialization
