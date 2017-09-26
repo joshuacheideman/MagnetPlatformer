@@ -7,14 +7,16 @@ public class Enemy : Character {
     protected int damage;
     [SerializeField]
     protected float detectionRange;
+    [SerializeField]
+    protected float cooldown; // Cooldown of action in seconds
 
+    protected float curCooldown = 0;
     protected bool isGrounded = false;
     protected bool isAttacking = false;
     protected GameObject target;
     // Use this for initialization
     protected void Start () {
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log("Initializng");
         target = GameObject.FindGameObjectWithTag("Player");
 	}
 
@@ -37,9 +39,24 @@ public class Enemy : Character {
         }
     }
 
+    /**
+    * Flips sprite if if is falling down
+     */
+    protected void flipIfFalling() {
+        if (rb.velocity.y <= 0) {
+            render.flipY = true;
+        }
+        if (isGrounded) {
+            render.flipY = false;
+            isAttacking = false;
+        }
+    }
+
     virtual protected void OnCollisionEnter2D(Collision2D col) {
         if (col.gameObject.tag == "Floor") {
             isGrounded = true;
         }
     }
+
+
 }
