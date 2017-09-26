@@ -5,14 +5,26 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	bool isPaused=false;
 	int SceneNumer;
+    [SerializeField]
+    private GameObject[] initializables;
+
 	// Use this for initialization
 	void Start () {
-	}
+        // Only need to be on level 1, this will carry over to next levels
+        Object.DontDestroyOnLoad(gameObject);
+
+        // For Debugging since other levels don't have a gamemanager
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            InitializeLevel();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		ReturnToMenu ();
 		Pause ();
+        DebugScene();
 	}
 	public void ReturnToMenu()
 	{
@@ -40,4 +52,24 @@ public class GameManager : MonoBehaviour {
 	{
 		SceneManager.LoadScene (SceneNo);
 	}
+
+    private void InitializeLevel()
+    {
+        foreach (GameObject GO in initializables)
+        {
+            Instantiate(GO, Vector2.zero, Quaternion.identity);
+        }
+    }
+
+    /// <summary>
+    /// Debug tool for checking level initialization when switching scenes
+    /// </summary>
+    private void DebugScene()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SwitchScene(SceneManager.GetActiveScene().buildIndex + 1);
+            InitializeLevel();
+        }
+    }
 }

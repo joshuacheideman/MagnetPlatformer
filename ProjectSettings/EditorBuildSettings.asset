@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Joshua/Scenes/TestScene.unity
     guid: ce9d535d23e8e8e4c8f6d8aa16304628
+  - enabled: 1
+    path: Assets/Thomas/Assets/_Scenes/TestPlayerMove.unity
+    guid: 2b950766d19cf274da5c439440b91cb2

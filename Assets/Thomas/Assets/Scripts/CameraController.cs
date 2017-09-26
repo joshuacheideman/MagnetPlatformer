@@ -10,7 +10,10 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        transform.position = player.transform.position;
+        Vector3 cameraPosition;
+        cameraPosition = player.transform.position;
+        cameraPosition.z = -1;
+        transform.position = cameraPosition;
         offset = transform.position - player.transform.position;
 	}
 	
