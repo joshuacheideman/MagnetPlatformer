@@ -23,8 +23,4 @@ public abstract class Character : MonoBehaviour {
 	// Update is called once per frame
 	protected virtual void Update () {
 	}
-
-    protected virtual void Move()
-    {
-    }
 }
