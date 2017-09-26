@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour {
             Instantiate(GO, Vector2.zero, Quaternion.identity);
         }
     }
+	private void DestroyLevel()//delete current gameObjects
+	{
+		
+	}
 
     /// <summary>
     /// Debug tool for checking level initialization when switching scenes
@@ -69,7 +73,8 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.N))
         {
             SwitchScene(SceneManager.GetActiveScene().buildIndex + 1);
-            InitializeLevel();
+			if(SceneManager.GetActiveScene().buildIndex + 1<=SceneManager.sceneCount-1)
+            	InitializeLevel();
         }
     }
 }
