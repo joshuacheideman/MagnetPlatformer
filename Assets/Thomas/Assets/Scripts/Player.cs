@@ -124,11 +124,9 @@ public class Player : Character {
 				if(PullRed&&Input.GetButton("MagnetPull"))//this is the left ctrl key.
 				{
 					MoveBox.BoxPull (hit.collider.gameObject.transform);
-					Debug.Log("Pull red");
 				}
 				else if(!PullRed&&Input.GetButton("MagnetPull"))
 				{
-					Debug.Log("Push Red");
 					MoveBox.BoxPush (hit.collider.gameObject.transform);
 				}
 			}
