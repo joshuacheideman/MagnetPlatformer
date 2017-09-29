@@ -84,5 +84,15 @@ public class GameManager : MonoBehaviour {
 			if(SceneManager.GetActiveScene().buildIndex + 1<=SceneManager.sceneCount-1)
             	InitializeLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartScene();
+        }
+    }
+
+    public void RestartScene()
+    {
+        SwitchScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -25,10 +25,13 @@ public class PlayerHealth : Health {
     [SerializeField]
     private float flashDuration;
 
-    private float flashTimer;
-
     [SerializeField]
     private SpriteRenderer playerSprite;
+
+    private GameManager gm;
+
+    [SerializeField]
+    private float deathDuration;
 
 	// Use this for initialization
 	protected override void Start () {
@@ -44,6 +47,7 @@ public class PlayerHealth : Health {
         }
 
         rb = GetComponent<Rigidbody2D>();
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -60,16 +64,6 @@ public class PlayerHealth : Health {
 
         if (!playerSprite)
             return;
-
-        if (flashTimer > 0)
-        {
-            playerSprite.color = Color.red;
-            flashTimer -= Time.deltaTime;
-        }
-        else
-        {
-            playerSprite.color = Color.white;
-        }
 	}
 
     protected override void TakeDamage(int damage)
@@ -82,7 +76,9 @@ public class PlayerHealth : Health {
         hurtSound.Play();
         UpdateHealthBar();
         damageTimer = timeToTakeDamage;
-        flashTimer = flashDuration;
+
+        if (currentHealth > 0)
+            StartCoroutine(Flash(flashDuration));
     }
 
     private void UpdateHealthBar()
@@ -95,12 +91,31 @@ public class PlayerHealth : Health {
             Destroy(playerScript);
             Destroy(rb);
             Destroy(playerSprite);
+
+            StartCoroutine(Death(deathDuration));
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Kill"))
+        {
             TakeDamage(100);
+        }
+    }
+
+    IEnumerator Flash(float waitTime)
+    {
+
+        Color originalColor = playerSprite.color;
+        playerSprite.color = Color.red;
+        yield return new WaitForSeconds(waitTime);
+        playerSprite.color = originalColor;
+    }
+
+    IEnumerator Death(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        gm.RestartScene();
     }
 }
