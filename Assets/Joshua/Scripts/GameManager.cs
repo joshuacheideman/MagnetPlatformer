@@ -9,9 +9,6 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private GameObject[] initializables;
 
-	void Awake()
-	{
-	}
 	// Use this for initialization
 	void Start () {
 		if (instance == null)

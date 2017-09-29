@@ -116,7 +116,7 @@ public class Player : Character {
 				Rigidbody2D BoxBody;
 				BoxBody = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
 				BoxBody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
-				BoxBody.velocity = new Vector2 (0.0f, 0.0f);
+				BoxBody.velocity = new Vector2 (0.0f, -9.8f);
 			}
 			else//else just freeze rotation
 			hit.collider.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
