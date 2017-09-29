@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class Flag : MonoBehaviour {
 	Animator anim;
 	GameManager manager;
+    [SerializeField]
+    private float flagRaiseTime;
 	// Use this for initialization
 	void Start () {
 		anim = gameObject.GetComponent<Animator> ();
@@ -15,11 +17,17 @@ public class Flag : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnTriggerStay2D(Collider2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Player") {
-			anim.SetBool ("RaiseFlag", true);
-			manager.SwitchScene (SceneManager.GetActiveScene ().buildIndex + 1);
+			anim.SetBool ("FlagRaised", true);
+            StartCoroutine(WaitFlag());
 		}
 	}
+
+    IEnumerator WaitFlag()
+    {
+        yield return new WaitForSeconds(flagRaiseTime);
+        manager.SwitchScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
