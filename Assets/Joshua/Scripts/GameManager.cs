@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
+	public static GameManager instance = null;
 	bool isPaused=false;
 	int SceneNumer;
     [SerializeField]
     private GameObject[] initializables;
 
+	void Awake()
+	{
+	}
 	// Use this for initialization
 	void Start () {
-        // Only need to be on level 1, this will carry over to next levels
-        Object.DontDestroyOnLoad(gameObject);
-
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy (gameObject);
+		// Only need to be on level 1, this will carry over to next levels
+		DontDestroyOnLoad(transform.gameObject);
         // For Debugging since other levels don't have a gamemanager
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
