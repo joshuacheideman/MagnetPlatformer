@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1699478721894528}
+  m_RootGameObject: {fileID: 1246352293990196}
   m_IsPrefabParent: 1
---- !u!1 &1699478721894528
+--- !u!1 &1246352293990196
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4766955445066688}
-  - component: {fileID: 114760065624009696}
+  - component: {fileID: 4992625848901238}
+  - component: {fileID: 114809429692001916}
   m_Layer: 0
-  m_Name: JoshuaLevelGenerator
+  m_Name: HoverSampleLevelGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4766955445066688
+--- !u!4 &4992625848901238
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1699478721894528}
+  m_GameObject: {fileID: 1246352293990196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114760065624009696
+--- !u!114 &114809429692001916
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1699478721894528}
+  m_GameObject: {fileID: 1246352293990196}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de225e36c884c884da89d4664521d811, type: 3}
@@ -59,3 +59,7 @@ MonoBehaviour:
     prefab: {fileID: 1217281843321976, guid: 057dddccfe127f944a5646ee15c6848d, type: 2}
   - color: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
     prefab: {fileID: 1606435194883706, guid: aba13e2ebce423b48b9d8879cb0bdbee, type: 2}
+  - color: {r: 0.92941177, g: 0.10980392, b: 0.14117648, a: 1}
+    prefab: {fileID: 1446393756600298, guid: a6172a45f35032348a65bf3318cdc71b, type: 2}
+  - color: {r: 0, g: 0.63529414, b: 0.9098039, a: 1}
+    prefab: {fileID: 1922996113532878, guid: 331d22f9fb3bf6f4b95f678da36c702d, type: 2}

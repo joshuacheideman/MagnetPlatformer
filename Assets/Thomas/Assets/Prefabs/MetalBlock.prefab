@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4853373220602020}
   - component: {fileID: 61700756085768640}
   m_Layer: 0
-  m_Name: MagnetZone
+  m_Name: MagnetHoverZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

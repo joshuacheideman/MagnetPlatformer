@@ -151,7 +151,7 @@ Prefab:
         type: 2}
       propertyPath: initializables.Array.data[0]
       value: 
-      objectReference: {fileID: 1699478721894528, guid: f3e9c93b6fb8e9e458504e614809bae3,
+      objectReference: {fileID: 1246352293990196, guid: a3ab776631ef48241aca5bb47d567113,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 949270359e437f04b9e8e77eed46ec3e, type: 2}
