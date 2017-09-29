@@ -1,5 +1,5 @@
 # MagnetPlatformer
-Programmers: Thomas Tran, Joshuda Heideman, Davey Jay Belliss  
+Programmers: Thomas Tran, Joshua Heideman, Davey Jay Belliss  
 Art: Joshua and Thomas  
 Music and Sounds: Thomas  
 
