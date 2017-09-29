@@ -18,8 +18,10 @@ public class Player : Character {
 	private const int Moving =4;
 	RaycastHit2D[] AllBoxes = new RaycastHit2D[5];//amount of total red and blue boxes
 	BoxBehavior MoveBox;
+    private AudioSource audSrc;
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        audSrc = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -65,6 +67,7 @@ public class Player : Character {
 				rb.AddForce(Vector2.up * jumpForce);
 				isGrounded = false;
 				anim.SetInteger("state", JumpAnim);
+                audSrc.Play();
 			}
 		}
 	}
