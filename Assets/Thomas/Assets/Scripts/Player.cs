@@ -115,6 +115,7 @@ public class Player : Character {
 				BoxBody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 				BoxBody.velocity = new Vector2 (0.0f, 0.0f);
 			}
+			else
 			hit.collider.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
 			if (hit.collider.gameObject.GetComponentInParent<SpriteRenderer> ().color == Color.red) {
 				if(PullRed&&Input.GetButton("MagnetPull"))//this is the left ctrl key.
