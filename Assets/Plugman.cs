@@ -26,17 +26,18 @@ public class Plugman : Enemy {
         return AnimatorIsPlaying() && anim.GetCurrentAnimatorStateInfo(0).IsName(stateName);
     }
 
-    void FixedUpdate () {
+    override protected void  FixedUpdate () {
+        if (AnimatorIsPlaying("AttackPlugman") && !isAttacking) {
+            isAttacking = true;
+            Instantiate(projectile, orbSpawn.position, orbSpawn.rotation);
+        }
         if (!AnimatorIsPlaying("AttackPlugman")) {
-
             isAttacking = false;
         }
         if (target) {
             Vector3 toTarget = getVectorToTarget();
             if (toTarget.x < detectionRange && !isAttacking) {
                 anim.SetTrigger("isAttacking");
-                Instantiate(projectile, orbSpawn, true);
-                isAttacking = true;
             }
         }
 	}
