@@ -33,6 +33,9 @@ public class PlayerHealth : Health {
     [SerializeField]
     private float deathDuration;
 
+    [SerializeField]
+    private BoxCollider2D col2d;
+
 	// Use this for initialization
 	protected override void Start () {
         base.Start();
@@ -91,6 +94,7 @@ public class PlayerHealth : Health {
             Destroy(playerScript);
             Destroy(rb);
             Destroy(playerSprite);
+            Destroy(col2d);
 
             StartCoroutine(Death(deathDuration));
         }
