@@ -446,6 +446,7 @@ MonoBehaviour:
   timeToTakeDamage: 1
   flashDuration: 0.2
   playerSprite: {fileID: 212498039597525028}
+  deathDuration: 2
 --- !u!212 &212498039597525028
 SpriteRenderer:
   m_ObjectHideFlags: 1
