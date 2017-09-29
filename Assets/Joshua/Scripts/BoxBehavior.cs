@@ -10,7 +10,7 @@ public class BoxBehavior : MonoBehaviour {
 		float strength,offset;
 		Player = GameObject.FindGameObjectWithTag ("Player");
 		offset = Player.gameObject.transform.position.x - Box.position.x;
-		if (offset == 0.0f)//cannot divide by zero
+		if (offset < 1.0f&&offset>-1.0f)//makes it so speed goes from 0 to 1
 			return;
 		strength = 1 / offset;
 		if (offset < 0)
