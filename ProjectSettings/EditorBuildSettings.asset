@@ -9,11 +9,5 @@ EditorBuildSettings:
     path: Assets/Joshua/Scenes/Menu.unity
     guid: 0dd7ee4a48b14c848a94177f681d45f4
   - enabled: 1
-    path: Assets/Joshua/Scenes/TestScene.unity
-    guid: ce9d535d23e8e8e4c8f6d8aa16304628
-  - enabled: 1
-    path: Assets/Thomas/Assets/_Scenes/TestPlayerMove.unity
-    guid: 2b950766d19cf274da5c439440b91cb2
-  - enabled: 1
-    path: Assets/Thomas/Assets/_Scenes/testflag.unity
-    guid: 3442d16546e767c4996066b514c68d51
+    path: Assets/_FinalScenes/Level1.unity
+    guid: 5f8d36db6d19dda42b51f8206eb949a0
