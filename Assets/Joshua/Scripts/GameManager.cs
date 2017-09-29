@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
+	public static GameManager instance = null;
 	bool isPaused=false;
 	int SceneNumer;
-    private static GameManager instance = null;
     [SerializeField]
     private GameObject[] initializables;
 
 	// Use this for initialization
 	void Start () {
-        // Only need to be on level 1, this will carry over to next levels
         if (instance == null)
             instance = this;
         else if (instance != this)

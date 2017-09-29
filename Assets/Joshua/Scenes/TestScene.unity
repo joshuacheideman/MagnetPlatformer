@@ -108,13 +108,18 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1526181113
+--- !u!1001 &821093242
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114834102072603756, guid: 949270359e437f04b9e8e77eed46ec3e,
+        type: 2}
+      propertyPath: initializables.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4413952783977566, guid: 949270359e437f04b9e8e77eed46ec3e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -151,7 +156,13 @@ Prefab:
         type: 2}
       propertyPath: initializables.Array.data[0]
       value: 
-      objectReference: {fileID: 1246352293990196, guid: a3ab776631ef48241aca5bb47d567113,
+      objectReference: {fileID: 1078541518252680, guid: 24216a1b454b1914b9b7e6b30ab2b81b,
+        type: 2}
+    - target: {fileID: 114834102072603756, guid: 949270359e437f04b9e8e77eed46ec3e,
+        type: 2}
+      propertyPath: initializables.Array.data[2]
+      value: 
+      objectReference: {fileID: 1291446180453838, guid: 65836fc46a8486c4abdf44603f6a0116,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 949270359e437f04b9e8e77eed46ec3e, type: 2}

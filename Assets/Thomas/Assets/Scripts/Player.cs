@@ -116,7 +116,7 @@ public class Player : Character {
 				Rigidbody2D BoxBody;
 				BoxBody = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
 				BoxBody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
-				BoxBody.velocity = new Vector2 (0.0f, 0.0f);
+				BoxBody.velocity = new Vector2 (0.0f, -9.8f);
 			}
 			else//else just freeze rotation
 			hit.collider.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -124,11 +124,9 @@ public class Player : Character {
 				if(PullRed&&Input.GetButton("MagnetPull"))//this is the left ctrl key.
 				{
 					MoveBox.BoxPull (hit.collider.gameObject.transform);
-					Debug.Log("Pull red");
 				}
 				else if(!PullRed&&Input.GetButton("MagnetPull"))
 				{
-					Debug.Log("Push Red");
 					MoveBox.BoxPush (hit.collider.gameObject.transform);
 				}
 			}
