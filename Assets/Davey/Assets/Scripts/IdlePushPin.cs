@@ -18,11 +18,11 @@ public class IdlePushPin : Enemy {
         }
     }
 
-    virtual protected void OnCollisionEnter2D(Collision2D col) {
+    override protected void OnCollisionEnter2D(Collision2D col) {
         base.OnCollisionEnter2D(col);
         if (col.gameObject.tag == "Player") {
-            Debug.Log("Ow, player took " + damage + " damage");
-            //col.gameObject.SendMessage("takeDamage", damage);
+            //Debug.Log("Ow, player took " + damage + " damage");
+            col.gameObject.SendMessage("TakeDamage", damage);
         }
     }
 }

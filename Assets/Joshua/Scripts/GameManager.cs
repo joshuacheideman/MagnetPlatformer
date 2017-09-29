@@ -11,12 +11,13 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (instance == null)
-			instance = this;
-		else if (instance != this)
-			Destroy (gameObject);
-		// Only need to be on level 1, this will carry over to next levels
-		DontDestroyOnLoad(transform.gameObject);
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
+        Object.DontDestroyOnLoad(gameObject);
+
         // For Debugging since other levels don't have a gamemanager
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
@@ -32,8 +33,11 @@ public class GameManager : MonoBehaviour {
 	}
 	public void ReturnToMenu()
 	{
-		if(Input.GetButtonDown("Cancel"))
-			SceneManager.LoadScene (0);//0 is Main Menu Scene
+        if (Input.GetButtonDown("Cancel"))
+        {
+            SceneManager.LoadScene(0);//0 is Main Menu Scene
+            Destroy(gameObject);
+        }
 	}
 	void Pause()//TODO make an interactive pause menu
 	{
