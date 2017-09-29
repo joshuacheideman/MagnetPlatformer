@@ -32,8 +32,8 @@ public class BoxBehavior : MonoBehaviour {
 	void TranslateBoxes(Transform Box,float offset)
 	{
 		if (offset < 0)
-			Box.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-boxmovement * 100, 0.0f);
+			Box.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-boxmovement * 100, -9.8f);
 		else if (offset > 0)
-			Box.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boxmovement * 100, 0.0f);
+			Box.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boxmovement * 100, -9.8f);
 		}
 }
