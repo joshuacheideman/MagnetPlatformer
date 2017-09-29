@@ -35,6 +35,5 @@ public class BoxBehavior : MonoBehaviour {
 			Box.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-boxmovement * 100, 0.0f);
 		else if (offset > 0)
 			Box.gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (boxmovement * 100, 0.0f);
-		Debug.Log (boxmovement*100);
 		}
 }

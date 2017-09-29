@@ -88,7 +88,7 @@ public class Player : Character {
 			rb.velocity = new Vector2 (rb.velocity.x, 0.0f);
 		}
 	}
-	void GetColliders()
+	void GetColliders()//Get array of colliders from Circlecast in layer with Metal blocks
 	{
 		Physics2D.CircleCastNonAlloc (transform.position, 14.0f, Vector2.right, AllBoxes, 1.0f, 1<<LayerMask.NameToLayer("MetalBlocks"));//do this to get all boxes that are in the circle
 	}
@@ -109,15 +109,15 @@ public class Player : Character {
 			if (hit.collider == null)
 				break;
 			MoveBox = hit.collider.transform.gameObject.GetComponent<BoxBehavior> ();
-			if (!Input.GetButton ("MagnetPull")) {
+			if (!Input.GetButton ("MagnetPull")) {//if not holding left ctrl freeze position and rotation and make velocity 0.
 				Rigidbody2D BoxBody;
 				BoxBody = hit.collider.gameObject.GetComponent<Rigidbody2D> ();
 				BoxBody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
 				BoxBody.velocity = new Vector2 (0.0f, 0.0f);
 			}
-			else
+			else//else just freeze rotation
 			hit.collider.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
-			if (hit.collider.gameObject.GetComponentInParent<SpriteRenderer> ().color == Color.red) {
+			if (hit.collider.gameObject.GetComponentInParent<SpriteRenderer> ().color == Color.red) {//check red block
 				if(PullRed&&Input.GetButton("MagnetPull"))//this is the left ctrl key.
 				{
 					MoveBox.BoxPull (hit.collider.gameObject.transform);
@@ -129,7 +129,7 @@ public class Player : Character {
 					MoveBox.BoxPush (hit.collider.gameObject.transform);
 				}
 			}
-			if (hit.collider.gameObject.GetComponentInParent<SpriteRenderer> ().color == Color.blue) {
+			if (hit.collider.gameObject.GetComponentInParent<SpriteRenderer> ().color == Color.blue) {//do opposite of red block
 				
 				if (!PullRed && Input.GetButton ("MagnetPull"))
 					MoveBox.BoxPull (hit.collider.gameObject.transform);
