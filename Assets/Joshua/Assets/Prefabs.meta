@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Joshua/Assets/Prefabs.meta
 guid: 7adb25d954bda814696514f36217b6fc
 folderAsset: yes
 timeCreated: 1506460949
+=======
+guid: fe573f59d9d858441a8349f1cfcc2a6c
+folderAsset: yes
+timeCreated: 1506424714
+>>>>>>> Enemies:Assets/Davey/Assets/Animations.meta
 licenseType: Free
 DefaultImporter:
   userData: 
