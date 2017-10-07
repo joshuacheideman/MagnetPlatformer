@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58818259304389122}
   - component: {fileID: 95787478088496588}
   - component: {fileID: 114297282425314320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ElectricOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,8 +140,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1676900983
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ce3738718b186ad4aba8129aa6e368e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
