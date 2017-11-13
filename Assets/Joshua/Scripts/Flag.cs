@@ -28,6 +28,6 @@ public class Flag : MonoBehaviour {
     IEnumerator WaitFlag()
     {
         yield return new WaitForSeconds(flagRaiseTime);
-        manager.SwitchScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LevelManager.instance.NextLevel();
     }
 }

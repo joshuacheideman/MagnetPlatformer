@@ -120,6 +120,6 @@ public class PlayerHealth : Health {
     IEnumerator Death(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        gm.RestartScene();
+        LevelManager.instance.ResetLevel();
     }
 }

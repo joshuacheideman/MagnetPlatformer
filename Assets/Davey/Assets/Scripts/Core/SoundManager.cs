@@ -23,41 +23,30 @@ public class SoundManager : MonoBehaviour
     /// <summary>
     /// Stores volume of sfx and textSound
     /// </summary>
-    private float _sfxVolume;
-    /// <summary>
-    /// Public variable to access/set sfx/textsound volume
-    /// </summary>
-    public float sfxVolume
+    private float _sfxVolume = .5f;
+
+    public void SetSFXVolume(float value)
     {
-        get
+        _sfxVolume = value;
+        if (sfx)
         {
-            return _sfxVolume;
-        }
-        set
-        {
-            _sfxVolume = value;
             sfx.volume = _sfxVolume;
+        }
+        if (textSound)
+        {
             textSound.volume = _sfxVolume;
         }
     }
+
     /// <summary>
     /// Stores volume of music
     /// </summary>
-    private float _musicVolume;
-    /// <summary>
-    /// Public variable to access/set music volume
-    /// </summary>
-    public float musicVolume
+    private float _musicVolume = .5f;
+
+    public void SetMusicVolume(float value)
     {
-        get
-        {
-            return _musicVolume;
-        }
-        set
-        {
-            _musicVolume = value;
-            music.volume = _musicVolume;
-        }
+        _musicVolume = value;
+        music.volume = _musicVolume;
     }
 
     /// <summary>
@@ -98,6 +87,10 @@ public class SoundManager : MonoBehaviour
         sfx = GetComponents<AudioSource>()[1];
         music = GetComponents<AudioSource>()[2];
         music.loop = true;
+
+        sfx.volume = _sfxVolume;
+        textSound.volume = _sfxVolume;
+        music.volume = _musicVolume;
     }
 
     /// <summary>

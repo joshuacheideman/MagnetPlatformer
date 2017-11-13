@@ -115,11 +115,19 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ChangeLevel(SceneManager.GetActiveScene().buildIndex);
+            ResetLevel();
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
             NextLevel();
         }
+    }
+
+    /// <summary>
+    /// Resets level
+    /// </summary>
+    public void ResetLevel()
+    {
+        ChangeLevel(SceneManager.GetActiveScene().buildIndex);
     }
 }
